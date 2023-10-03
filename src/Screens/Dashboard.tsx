@@ -29,6 +29,7 @@ import Trash from "./admin_screens/Trash";
 import Email from "./admin_screens/Email";
 import Inbox from "./admin_screens/Inbox";
 import { BrowserRouter as Router } from 'react-router-dom';
+import BasicButton from '../components/Button';
 
 const drawerWidth = 240;
 
@@ -106,7 +107,9 @@ export default function Dashboard(props: Props) {
   return (
 
     <Box sx={{ display: 'flex' }}>
+      
       <CssBaseline />
+      
       <AppBar
         position="fixed"
         sx={{
@@ -115,6 +118,7 @@ export default function Dashboard(props: Props) {
         }}
       >
         <Toolbar>
+          
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -126,6 +130,9 @@ export default function Dashboard(props: Props) {
           </IconButton>
           <Typography variant="h6" noWrap component="div">
             Responsive drawer with Pages
+          </Typography>
+          <Typography variant="h3" noWrap className='ms-5' component="div">
+           <BasicButton label={'Go Back'} variant={'outlined'} onClick={()=> navigate('/')}/>
           </Typography>
         </Toolbar>
       </AppBar>

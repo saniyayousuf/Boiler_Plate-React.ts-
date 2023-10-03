@@ -16,6 +16,9 @@ import Input from '../../components/Input';
 import Home from '../../Screens/Home';
 import Table from '../../components/DynamicTable';
 import BasicDatePicker from '../../components/DatePicker';
+import APIProject from '../../pages/APIproject';
+import AddProject from '../../pages/AddProject';
+import Protected from '../../Screens/protected';
 
 
 
@@ -26,16 +29,16 @@ function Approuter() {
         <Router>
             <>
                 <div>
-                    <Home />
-                    <Table label={'sample table'} datasourse={[]} cols={[]} />
-                    <BasicButton label={'1click'} variant={'h2'} onClick={() => { console.log("Done") }} />
-                    <Input label={'comment'} variant={'h3'} onChange={() => { console.log("Done") }} required={false} type={'text'} />
-                    <BasicSwitches />
-                    <IconButtons />
-                    <Login useMUI={useMUI} />
-                    <Signup useMUI={useMUI} />
-                    < Dashboard />
-                    <BasicDatePicker />
+                    {/* <Home /> */}
+                    {/* <Table label={'sample table'} datasourse={[]} cols={[]} /> */}
+                    {/* <BasicButton label={'1click'} variant={'h2'} onClick={() => { console.log("Done") }} /> */}
+                    {/* <Input label={'comment'} variant={'h3'} onChange={() => { console.log("Done") }} required={false} type={'text'} /> */}
+                    {/* <BasicSwitches /> */}
+                    {/* <IconButtons /> */}
+                    {/* <Login useMUI={useMUI} /> */}
+                    {/* <Signup useMUI={useMUI} /> */}
+                    {/* < Dashboard />   */}
+                    {/* <BasicDatePicker /> */}
                 </div>
                 <Routes>
                     <Route path="Notification" element={<Notification />} />
@@ -46,7 +49,11 @@ function Approuter() {
                     <Route path="Comments" element={<Comments />} />
                     <Route path="login" element={<Login useMUI={useMUI} />} />
                     <Route path="signup" element={<Signup useMUI={useMUI} />} />
-                    <Route path="/dashboard/*" element={<Dashboard />} />
+                    <Route path="dashboard/*" element={<Dashboard />} />
+                    <Route path="/" element={<Protected Screen={Home} />} />
+                    <Route path="project" element={<APIProject />} />
+                    <Route path="add/" element={< AddProject />} />
+                    <Route path="add/:id" element={<AddProject />} />
                 </Routes>
             </>
         </Router>

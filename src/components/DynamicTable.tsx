@@ -21,8 +21,8 @@ type tableProps = {
             <tbody>
               {datasourse.map((row, i) => (
                 <tr>
-                  {cols.map((col, ind) => (
-                    <td>{col.type == "boolean"? row[col.key]?"Yes":"No":row[col.key] }</td>
+                  {cols.map((col, i) => (
+                    <td key={i}>{col.type == "boolean"? row[col.key]?"Yes":"No":row[col.key] }</td>
                   ))}
                 </tr>
               ))}

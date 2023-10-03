@@ -5,7 +5,7 @@ import Button from '@mui/material/Button';
 type btntype = {
   label: string,
   variant: string,
-  onClick: () => void,
+  onClick ?: any,
 
 
 

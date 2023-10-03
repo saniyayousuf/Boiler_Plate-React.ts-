@@ -6,9 +6,10 @@ import TextField from '@mui/material/TextField';
 type inputtype = {
   label: string,
   variant: string,
-  onChange: () => void,
+  onChange?: any,
   required: boolean,
-  type: string,
+  type?: string,
+  value?: any,
 
 
 
@@ -25,10 +26,11 @@ export default function Input(props: inputtype) {
       noValidate
       autoComplete="off"
     >
-      <TextField label={label}
+      <TextField
+        placeholder={label}
         required={required}
         onChange={onChange}
-        type={type}
+        type={type ?? "text"}
       />
 
     </Box>
